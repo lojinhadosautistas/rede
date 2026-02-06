@@ -1,0 +1,20 @@
+/* ===== LOGIN – Correção de contraste ===== */
+
+.card {
+  background-color: #ffffff;
+}
+
+.card h3,
+.card p,
+.card label {
+  color: #212529;
+}
+
+.card input {
+  background-color: #ffffff;
+  color: #212529;
+}
+
+.card input::placeholder {
+  color: #6c757d;
+}
