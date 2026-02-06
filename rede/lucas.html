@@ -57,4 +57,54 @@
     </div>
 
     <!-- INFO CARD -->
-    <
+    <div class="row mb-4">
+      <div class="col-lg-8">
+        <div class="module-card">
+          <h3>Contexto do Agente</h3>
+          <p>
+            O LUCAS opera exclusivamente com base nos documentos autorizados
+            ao seu perfil de acesso e no conhecimento técnico validado.
+          </p>
+          <span class="badge bg-primary">Modo institucional</span>
+          <span class="badge bg-secondary">Acesso controlado por role</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHAT AREA -->
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="module-card" style="min-height: 380px;">
+          
+          <div id="chatWindow" style="height: 220px; overflow-y: auto; margin-bottom: 15px;">
+            <p class="text-muted">
+              <strong>LUCAS:</strong> Estou pronto para analisar documentos, responder perguntas
+              técnicas e apoiar decisões dentro do escopo autorizado.
+            </p>
+          </div>
+
+          <form id="lucasForm">
+            <textarea
+              class="form-control mb-3"
+              rows="3"
+              placeholder="Digite sua pergunta ou solicitação..."
+              required
+            ></textarea>
+
+            <button type="submit" class="btn btn-primary">
+              Enviar para o LUCAS
+            </button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- JS -->
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="js/lucas.js"></script>
+
+</body>
+</html>
