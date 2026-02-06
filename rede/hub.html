@@ -1,170 +1,293 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sistema REDE | Hub</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema REDE | Hub Interno</title>
 
-  <!-- Favicons -->
-  <link href="../assets/img/favicon.png" rel="icon">
+  <!-- Bootstrap + Icons -->
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
 
-  <!-- Vendor CSS -->
-  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg-main: #f4f6f9;
+      --bg-sidebar: #0f172a;
+      --bg-card: #ffffff;
+      --primary: #2563eb;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+    }
 
-  <!-- Main CSS -->
-  <link href="../assets/css/main.css" rel="stylesheet">
-  <link href="../assets/css/hub.css" rel="stylesheet">
+    body {
+      font-family: "Inter", sans-serif;
+      background: var(--bg-main);
+      margin: 0;
+    }
+
+    /* ===== TOPBAR ===== */
+    .topbar {
+      height: 60px;
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+
+    .topbar .brand {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--text-main);
+    }
+
+    .topbar .actions a {
+      margin-left: 15px;
+      text-decoration: none;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .topbar .actions a:hover {
+      color: var(--primary);
+    }
+
+    /* ===== SIDEBAR ===== */
+    .sidebar {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      width: 240px;
+      height: calc(100vh - 60px);
+      background: var(--bg-sidebar);
+      padding: 20px 0;
+      overflow-y: auto;
+    }
+
+    .sidebar h6 {
+      color: #94a3b8;
+      font-size: 0.75rem;
+      padding: 0 20px;
+      margin-top: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .sidebar a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 20px;
+      color: #e5e7eb;
+      text-decoration: none;
+      font-size: 0.95rem;
+      border-left: 3px solid transparent;
+    }
+
+    .sidebar a:hover,
+    .sidebar a.active {
+      background: rgba(255, 255, 255, 0.08);
+      border-left: 3px solid var(--primary);
+      color: #fff;
+    }
+
+    /* ===== MAIN ===== */
+    .main {
+      margin-left: 240px;
+      padding: 90px 30px 30px;
+    }
+
+    .page-title h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .page-title p {
+      color: var(--text-muted);
+      margin-top: 5px;
+    }
+
+    /* ===== STATS ===== */
+    .stat-card {
+      background: var(--bg-card);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      height: 100%;
+    }
+
+    .stat-card h3 {
+      font-size: 1.8rem;
+      margin: 0;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .stat-card span {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* ===== MODULE CARDS ===== */
+    .module-card {
+      background: var(--bg-card);
+      border-radius: 16px;
+      padding: 25px;
+      height: 100%;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+      transition: transform 0.2s ease;
+    }
+
+    .module-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .module-card i {
+      font-size: 2rem;
+      color: var(--primary);
+    }
+
+    .module-card h3 {
+      margin-top: 15px;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .module-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .module-card a {
+      display: inline-block;
+      margin-top: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      color: var(--primary);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 992px) {
+      .sidebar {
+        display: none;
+      }
+      .main {
+        margin-left: 0;
+      }
+    }
+  </style>
 </head>
 
-<body class="index-page">
+<body>
 
-  <!-- ===== HEADER ===== -->
-  <header class="header fixed-top">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-
-      <a href="hub.html" class="logo d-flex align-items-center">
-        <h1 class="sitename mb-0">Sistema REDE</h1>
-      </a>
-
-      <nav class="navmenu">
-        <ul>
-          <li><a href="hub.html" class="active">Hub</a></li>
-          <li><a href="../index.html">Site</a></li>
-          <li><a href="#" id="logoutBtn">Sair</a></li>
-        </ul>
-      </nav>
-
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="brand">Sistema REDE</div>
+    <div class="actions">
+      <a href="../index.html">Site</a>
+      <a href="#" id="logoutBtn">Sair</a>
     </div>
-  </header>
+  </div>
 
-  <!-- ===== MAIN ===== -->
-  <main class="main" style="padding-top: 100px;">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h6>Dashboard</h6>
+    <a href="hub.html" class="active">
+      <i class="bi bi-grid"></i> Visão Geral
+    </a>
 
-    <!-- ===== DASHBOARD HEADER ===== -->
-    <section class="dashboard-header py-4 mb-4">
-      <div class="container">
-        <div class="row align-items-center">
+    <h6>Conteúdos</h6>
+    <a href="#">
+      <i class="bi bi-film"></i> Rota Azul
+    </a>
+    <a href="#">
+      <i class="bi bi-calendar4-week"></i> Calendário 2026
+    </a>
+    <a href="#">
+      <i class="bi bi-journal-text"></i> Relatórios
+    </a>
 
-          <div class="col-md-8">
-            <h2 class="mb-1">Hub de Conteúdo Interno</h2>
-            <p class="text-muted mb-0">
-              Acesso interno a materiais estratégicos, técnicos e audiovisuais do Sistema REDE.
-            </p>
-          </div>
+    <h6>Sistema</h6>
+    <a href="#">
+      <i class="bi bi-shield-lock"></i> Área Restrita
+    </a>
+  </aside>
 
-          <div class="col-md-4 text-md-end mt-3 mt-md-0">
-            <span class="badge bg-primary px-3 py-2">Área restrita</span>
-          </div>
+  <!-- MAIN -->
+  <main class="main">
+    <div class="page-title mb-4">
+      <h1>Hub Interno</h1>
+      <p>Conteúdos estratégicos, técnicos e audiovisuais do Sistema REDE</p>
+    </div>
 
+    <!-- STATS -->
+    <div class="row g-4 mb-4">
+      <div class="col-md-4">
+        <div class="stat-card">
+          <h3>3</h3>
+          <span>Módulos ativos</span>
         </div>
       </div>
-    </section>
-
-    <!-- ===== STATUS ===== -->
-    <section class="container mb-4">
-      <div class="row g-3">
-
-        <div class="col-md-4">
-          <div class="stat-box">
-            <strong>3</strong>
-            <span>Módulos ativos</span>
-          </div>
+      <div class="col-md-4">
+        <div class="stat-card">
+          <h3>Atualizado</h3>
+          <span>Status do conteúdo</span>
         </div>
-
-        <div class="col-md-4">
-          <div class="stat-box">
-            <strong>Conteúdo</strong>
-            <span>Atualizado</span>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="stat-box">
-            <strong>Perfil</strong>
-            <span>Autorizado</span>
-          </div>
-        </div>
-
       </div>
-    </section>
-
-    <!-- ===== MODULES ===== -->
-    <section class="container">
-      <div class="row g-4">
-
-        <!-- ROTA AZUL -->
-        <div class="col-lg-4 col-md-6" id="rota-azul">
-          <div class="dashboard-card h-100">
-            <div class="dashboard-card-icon">
-              <i class="bi bi-film"></i>
-            </div>
-            <h3>ROTA AZUL</h3>
-            <p>
-              Curadoria do Cinema na Varanda, cartazes de eventos
-              e Manual de Roteirização.
-            </p>
-            <a href="#" class="btn btn-outline-primary w-100 mt-auto">
-              Acessar módulo
-            </a>
-          </div>
+      <div class="col-md-4">
+        <div class="stat-card">
+          <h3>Autorizado</h3>
+          <span>Perfil de acesso</span>
         </div>
-
-        <!-- CALENDÁRIO -->
-        <div class="col-lg-4 col-md-6" id="calendario-2026">
-          <div class="dashboard-card h-100">
-            <div class="dashboard-card-icon">
-              <i class="bi bi-calendar4-week"></i>
-            </div>
-            <h3>Calendário 2026</h3>
-            <p>
-              Estratégia anual, materiais de orientação,
-              manuais técnicos e documentos anexos.
-            </p>
-            <a href="#" class="btn btn-outline-primary w-100 mt-auto">
-              Acessar documentos
-            </a>
-          </div>
-        </div>
-
-        <!-- RELATÓRIOS -->
-        <div class="col-lg-4 col-md-6" id="relatorios">
-          <div class="dashboard-card h-100">
-            <div class="dashboard-card-icon">
-              <i class="bi bi-journal-text"></i>
-            </div>
-            <h3>Relatórios & Dossiês</h3>
-            <p>
-              Biblioteca de relatórios técnicos, alertas,
-              triggers e dossiês clínico-familiares.
-            </p>
-            <a href="#" class="btn btn-outline-primary w-100 mt-auto">
-              Abrir biblioteca
-            </a>
-          </div>
-        </div>
-
       </div>
-    </section>
+    </div>
 
+    <!-- MODULES -->
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <div class="module-card">
+          <i class="bi bi-film"></i>
+          <h3>Laboratório ROTA AZUL</h3>
+          <p>Curadoria, cartazes, manuais e roteiros do Cinema na Varanda.</p>
+          <a href="#">Acessar módulo →</a>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="module-card">
+          <i class="bi bi-calendar4-week"></i>
+          <h3>Calendário Estratégico 2026</h3>
+          <p>Planejamento, documentos técnicos e materiais de orientação.</p>
+          <a href="#">Acessar módulo →</a>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="module-card">
+          <i class="bi bi-journal-text"></i>
+          <h3>Relatórios & Dossiês</h3>
+          <p>Relatórios de alerta, triggers e documentos técnicos.</p>
+          <a href="#">Acessar módulo →</a>
+        </div>
+      </div>
+    </div>
   </main>
-
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer mt-5">
-    <div class="container text-center">
-      <p class="mb-0">Sistema REDE • Hub interno</p>
-    </div>
-  </footer>
 
   <!-- JS -->
   <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- HUB LOGIC -->
   <script type="module" src="js/hub.js"></script>
-
 </body>
 </html>
