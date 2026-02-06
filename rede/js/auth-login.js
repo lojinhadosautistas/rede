@@ -26,4 +26,7 @@ document.getElementById("loginForm").addEventListener("submit", (e) => {
     .catch((error) => {
       alert("Erro no login: " + error.message);
     });
+  
+  console.log("JS carregou");
+  
 });
