@@ -3,12 +3,14 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebas
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSy...",
+  apiKey: "AIzaSyC3jisbwoN9p0GJzAzfld3Y2l25ZtqIrEg",
   authDomain: "sistema-rede.firebaseapp.com",
   projectId: "sistema-rede",
-  appId: "1:123456:web:abc"
+  storageBucket: "sistema-rede.firebasestorage.app",
+  messagingSenderId: "930399212687",
+  appId: "1:930399212687:web:a89c0d73be4b9fbd488cfa",
+  measurementId: "G-JDJK73865X"
 };
-
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
