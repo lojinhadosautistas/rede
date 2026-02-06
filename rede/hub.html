@@ -3,43 +3,39 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sistema REDE | Hub Interno</title>
+  <title>Sistema REDE | Hub</title>
 
-  <!-- Bootstrap + Icons -->
-  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <!-- Bootstrap -->
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
 
   <style>
     :root {
-      --bg-main: #f4f6f9;
-      --bg-sidebar: #0f172a;
-      --bg-card: #ffffff;
+      --sidebar-width: 260px;
       --primary: #2563eb;
-      --text-main: #0f172a;
-      --text-muted: #64748b;
+      --bg: #f6f8fb;
+      --dark: #0f172a;
+      --muted: #64748b;
     }
 
     body {
-      font-family: "Inter", sans-serif;
-      background: var(--bg-main);
+      font-family: "Roboto", sans-serif;
+      background: var(--bg);
       margin: 0;
     }
 
     /* ===== TOPBAR ===== */
     .topbar {
-      height: 60px;
+      height: 64px;
       background: #fff;
       border-bottom: 1px solid #e5e7eb;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 20px;
+      padding: 0 24px;
       position: fixed;
       top: 0;
       left: 0;
@@ -47,17 +43,18 @@
       z-index: 1000;
     }
 
-    .topbar .brand {
-      font-weight: 700;
+    .topbar h1 {
       font-size: 1.1rem;
-      color: var(--text-main);
+      font-weight: 600;
+      margin: 0;
+      color: var(--dark);
     }
 
     .topbar .actions a {
-      margin-left: 15px;
+      margin-left: 16px;
       text-decoration: none;
-      color: var(--text-muted);
       font-weight: 500;
+      color: var(--muted);
     }
 
     .topbar .actions a:hover {
@@ -66,126 +63,114 @@
 
     /* ===== SIDEBAR ===== */
     .sidebar {
+      width: var(--sidebar-width);
+      background: #0f172a;
+      color: #fff;
       position: fixed;
-      top: 60px;
+      top: 64px;
       left: 0;
-      width: 240px;
-      height: calc(100vh - 60px);
-      background: var(--bg-sidebar);
-      padding: 20px 0;
-      overflow-y: auto;
+      bottom: 0;
+      padding: 24px 16px;
     }
 
     .sidebar h6 {
-      color: #94a3b8;
       font-size: 0.75rem;
-      padding: 0 20px;
-      margin-top: 20px;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: .08em;
+      color: #94a3b8;
+      margin-bottom: 12px;
     }
 
     .sidebar a {
       display: flex;
       align-items: center;
       gap: 10px;
-      padding: 10px 20px;
+      padding: 10px 12px;
+      border-radius: 8px;
       color: #e5e7eb;
       text-decoration: none;
+      margin-bottom: 6px;
       font-size: 0.95rem;
-      border-left: 3px solid transparent;
     }
 
     .sidebar a:hover,
     .sidebar a.active {
-      background: rgba(255, 255, 255, 0.08);
-      border-left: 3px solid var(--primary);
+      background: rgba(37, 99, 235, 0.15);
       color: #fff;
     }
 
     /* ===== MAIN ===== */
     .main {
-      margin-left: 240px;
-      padding: 90px 30px 30px;
+      margin-left: var(--sidebar-width);
+      padding: 96px 32px 32px;
     }
 
-    .page-title h1 {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: var(--text-main);
+    .page-title h2 {
+      font-weight: 600;
+      margin-bottom: 4px;
     }
 
     .page-title p {
-      color: var(--text-muted);
-      margin-top: 5px;
+      color: var(--muted);
+      margin-bottom: 24px;
     }
 
     /* ===== STATS ===== */
     .stat-card {
-      background: var(--bg-card);
-      border-radius: 12px;
+      background: #fff;
+      border-radius: 14px;
       padding: 20px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      height: 100%;
+      box-shadow: 0 8px 24px rgba(0,0,0,.04);
     }
 
-    .stat-card h3 {
-      font-size: 1.8rem;
-      margin: 0;
-      font-weight: 700;
+    .stat-card strong {
+      font-size: 1.6rem;
       color: var(--primary);
     }
 
     .stat-card span {
-      color: var(--text-muted);
-      font-size: 0.9rem;
+      display: block;
+      color: var(--muted);
+      margin-top: 4px;
     }
 
     /* ===== MODULE CARDS ===== */
     .module-card {
-      background: var(--bg-card);
+      background: #fff;
       border-radius: 16px;
-      padding: 25px;
+      padding: 24px;
       height: 100%;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-      transition: transform 0.2s ease;
-    }
-
-    .module-card:hover {
-      transform: translateY(-4px);
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 30px rgba(0,0,0,.05);
     }
 
     .module-card i {
-      font-size: 2rem;
+      font-size: 1.8rem;
       color: var(--primary);
+      margin-bottom: 12px;
     }
 
     .module-card h3 {
-      margin-top: 15px;
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       font-weight: 600;
     }
 
     .module-card p {
-      color: var(--text-muted);
+      color: var(--muted);
+      flex-grow: 1;
       font-size: 0.95rem;
     }
 
-    .module-card a {
-      display: inline-block;
-      margin-top: 10px;
-      font-weight: 600;
-      text-decoration: none;
-      color: var(--primary);
-    }
-
     /* ===== RESPONSIVE ===== */
-    @media (max-width: 992px) {
+    @media (max-width: 991px) {
       .sidebar {
         display: none;
       }
+
       .main {
         margin-left: 0;
+        padding: 96px 20px 24px;
       }
     }
   </style>
@@ -193,85 +178,78 @@
 
 <body>
 
-  <!-- TOPBAR -->
+  <!-- ===== TOPBAR ===== -->
   <div class="topbar">
-    <div class="brand">Sistema REDE</div>
+    <h1>Sistema REDE</h1>
     <div class="actions">
       <a href="../index.html">Site</a>
       <a href="#" id="logoutBtn">Sair</a>
     </div>
   </div>
 
-  <!-- SIDEBAR -->
+  <!-- ===== SIDEBAR ===== -->
   <aside class="sidebar">
     <h6>Dashboard</h6>
-    <a href="hub.html" class="active">
-      <i class="bi bi-grid"></i> Visão Geral
-    </a>
+    <a href="hub.html" class="active"><i class="bi bi-grid"></i> Hub</a>
+    <a href="#"><i class="bi bi-film"></i> ROTA AZUL</a>
+    <a href="#"><i class="bi bi-calendar4-week"></i> Calendário 2026</a>
+    <a href="#"><i class="bi bi-journal-text"></i> Relatórios</a>
 
-    <h6>Conteúdos</h6>
-    <a href="#">
-      <i class="bi bi-film"></i> Rota Azul
-    </a>
-    <a href="#">
-      <i class="bi bi-calendar4-week"></i> Calendário 2026
-    </a>
-    <a href="#">
-      <i class="bi bi-journal-text"></i> Relatórios
-    </a>
+    <hr class="text-secondary my-3">
 
     <h6>Sistema</h6>
-    <a href="#">
-      <i class="bi bi-shield-lock"></i> Área Restrita
-    </a>
+    <a href="#"><i class="bi bi-person-badge"></i> Perfil</a>
+    <a href="#"><i class="bi bi-shield-lock"></i> Área restrita</a>
   </aside>
 
-  <!-- MAIN -->
+  <!-- ===== MAIN ===== -->
   <main class="main">
-    <div class="page-title mb-4">
-      <h1>Hub Interno</h1>
-      <p>Conteúdos estratégicos, técnicos e audiovisuais do Sistema REDE</p>
+
+    <div class="page-title">
+      <h2>Hub de Conteúdo Interno</h2>
+      <p>Acesso interno a materiais estratégicos, técnicos e audiovisuais do Sistema REDE.</p>
     </div>
 
     <!-- STATS -->
-    <div class="row g-4 mb-4">
+    <div class="row g-3 mb-4">
       <div class="col-md-4">
         <div class="stat-card">
-          <h3>3</h3>
+          <strong>3</strong>
           <span>Módulos ativos</span>
         </div>
       </div>
       <div class="col-md-4">
         <div class="stat-card">
-          <h3>Atualizado</h3>
-          <span>Status do conteúdo</span>
+          <strong>Conteúdo</strong>
+          <span>Atualizado</span>
         </div>
       </div>
       <div class="col-md-4">
         <div class="stat-card">
-          <h3>Autorizado</h3>
-          <span>Perfil de acesso</span>
+          <strong>Perfil</strong>
+          <span>Autorizado</span>
         </div>
       </div>
     </div>
 
     <!-- MODULES -->
     <div class="row g-4">
+
       <div class="col-lg-4 col-md-6">
         <div class="module-card">
           <i class="bi bi-film"></i>
-          <h3>Laboratório ROTA AZUL</h3>
-          <p>Curadoria, cartazes, manuais e roteiros do Cinema na Varanda.</p>
-          <a href="#">Acessar módulo →</a>
+          <h3>ROTA AZUL</h3>
+          <p>Curadoria do Cinema na Varanda, cartazes e Manual de Roteirização.</p>
+          <a href="#" class="btn btn-outline-primary mt-3">Acessar módulo</a>
         </div>
       </div>
 
       <div class="col-lg-4 col-md-6">
         <div class="module-card">
           <i class="bi bi-calendar4-week"></i>
-          <h3>Calendário Estratégico 2026</h3>
-          <p>Planejamento, documentos técnicos e materiais de orientação.</p>
-          <a href="#">Acessar módulo →</a>
+          <h3>Calendário 2026</h3>
+          <p>Estratégia anual, materiais de orientação e documentos técnicos.</p>
+          <a href="#" class="btn btn-outline-primary mt-3">Acessar documentos</a>
         </div>
       </div>
 
@@ -279,15 +257,18 @@
         <div class="module-card">
           <i class="bi bi-journal-text"></i>
           <h3>Relatórios & Dossiês</h3>
-          <p>Relatórios de alerta, triggers e documentos técnicos.</p>
-          <a href="#">Acessar módulo →</a>
+          <p>Biblioteca de relatórios técnicos, alertas e dossiês clínicos.</p>
+          <a href="#" class="btn btn-outline-primary mt-3">Abrir biblioteca</a>
         </div>
       </div>
+
     </div>
+
   </main>
 
   <!-- JS -->
   <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script type="module" src="js/hub.js"></script>
+
 </body>
 </html>
