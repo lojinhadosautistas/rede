@@ -297,19 +297,51 @@
   <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script type="module" src="js/hub.js"></script>
 
-    <!-- Email no topbar -->
 
-  <script>
-  // Supondo que o email do usuário esteja armazenado no localStorage:
-  const userEmail = localStorage.getItem("userEmail"); // ou outra fonte de dados
+  <!-- Firebase App (obrigatório) -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<!-- Firebase Auth -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
+<script>
+  // Sua configuração do Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyC3jisbwoN9p0GJzAzfld3Y2l25ZtqIrEg",
+  authDomain: "sistema-rede.firebaseapp.com",
+  projectId: "sistema-rede",
+  storageBucket: "sistema-rede.firebasestorage.app",
+  messagingSenderId: "930399212687",
+  appId: "1:930399212687:web:a89c0d73be4b9fbd488cfa",
+};
+  
+  // Inicializa o Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<script>
   const emailSpan = document.getElementById("userEmail");
 
-  if (userEmail) {
-    emailSpan.textContent = userEmail;
-  } else {
-    emailSpan.textContent = "Usuário não logado";
-  }
+  // Observa mudanças de autenticação
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      // Usuário logado
+      emailSpan.textContent = user.email;
+    } else {
+      // Nenhum usuário logado
+      emailSpan.textContent = "Usuário não logado";
+    }
+  });
+
+  // Botão "Sair" desloga do Firebase
+  const logoutBtn = document.getElementById("logoutBtn");
+  logoutBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    firebase.auth().signOut().then(() => {
+      window.location.href = "../index.html"; // volta para a página inicial
+    });
+  });
 </script>
+  
 
   
 </body>
