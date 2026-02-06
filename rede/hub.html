@@ -64,6 +64,12 @@
       color: var(--primary);
     }
 
+    .topbar .actions #userEmail {
+      margin-left: 15px;
+      font-weight: 500;
+      color: var(--text-main);
+    }
+
     /* ===== SIDEBAR ===== */
     .sidebar {
       position: fixed;
@@ -198,6 +204,7 @@
     <div class="brand">Sistema REDE</div>
     <div class="actions">
       <a href="../index.html">Site</a>
+      <span id="userEmail" style="margin-left: 15px; color: var(--text-main); font-weight: 500;"></span>
       <a href="#" id="logoutBtn">Sair</a>
     </div>
   </div>
@@ -289,5 +296,21 @@
   <!-- JS -->
   <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script type="module" src="js/hub.js"></script>
+
+    <!-- Email no topbar -->
+
+  <script>
+  // Supondo que o email do usuário esteja armazenado no localStorage:
+  const userEmail = localStorage.getItem("userEmail"); // ou outra fonte de dados
+  const emailSpan = document.getElementById("userEmail");
+
+  if (userEmail) {
+    emailSpan.textContent = userEmail;
+  } else {
+    emailSpan.textContent = "Usuário não logado";
+  }
+</script>
+
+  
 </body>
 </html>
