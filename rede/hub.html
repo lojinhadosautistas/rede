@@ -135,14 +135,6 @@
   </footer>
   <!-- End Footer -->
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
-    <i class="bi bi-arrow-up-short"></i>
-  </a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
   <!-- Vendor JS Files -->
   <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../assets/vendor/aos/aos.js"></script>
@@ -155,19 +147,7 @@
   <script src="../assets/js/main.js"></script>
 
   <!-- Firebase (logout depois) -->
-  <script type="module">
-    import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-
-    const auth = getAuth();
-    const logoutBtn = document.getElementById("logoutBtn");
-
-    logoutBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      signOut(auth).then(() => {
-        window.location.href = "login.html";
-      });
-    });
-  </script>
+<script type="module" src="js/auth-hub.js"></script>
 
 </body>
 
