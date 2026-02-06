@@ -198,13 +198,12 @@
 </head>
 
 <body>
-
   <!-- TOPBAR -->
   <div class="topbar">
     <div class="brand">Sistema REDE</div>
     <div class="actions">
       <a href="../index.html">Site</a>
-      <span id="userEmail" style="margin-left: 15px; color: var(--text-main); font-weight: 500;"></span>
+      <span id="userEmail" style="margin-left: 15px; color: var(--text-main); font-weight: 500;">Carregando...</span>
       <a href="#" id="logoutBtn">Sair</a>
     </div>
   </div>
@@ -212,25 +211,15 @@
   <!-- SIDEBAR -->
   <aside class="sidebar">
     <h6>Dashboard</h6>
-    <a href="hub.html" class="active">
-      <i class="bi bi-grid"></i> Visão Geral
-    </a>
+    <a href="hub.html" class="active"><i class="bi bi-grid"></i> Visão Geral</a>
 
     <h6>Conteúdos</h6>
-    <a href="#">
-      <i class="bi bi-film"></i> Rota Azul
-    </a>
-    <a href="#">
-      <i class="bi bi-calendar4-week"></i> Calendário 2026
-    </a>
-    <a href="#">
-      <i class="bi bi-journal-text"></i> Relatórios
-    </a>
+    <a href="#"><i class="bi bi-film"></i> Rota Azul</a>
+    <a href="#"><i class="bi bi-calendar4-week"></i> Calendário 2026</a>
+    <a href="#"><i class="bi bi-journal-text"></i> Relatórios</a>
 
     <h6>Ferramentas</h6>
-    <a href="lucas.html">
-      <i class="bi bi-shield-lock"></i> LUCAS - Agente de IA
-    </a>
+    <a href="lucas.html"><i class="bi bi-shield-lock"></i> LUCAS - Agente de IA</a>
   </aside>
 
   <!-- MAIN -->
@@ -297,52 +286,43 @@
   <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script type="module" src="js/hub.js"></script>
 
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
 
-  <!-- Firebase App (obrigatório) -->
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-<!-- Firebase Auth -->
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script>
+    // Configuração do Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyC3jisbwoN9p0GJzAzfld3Y2l25ZtqIrEg",
+      authDomain: "sistema-rede.firebaseapp.com",
+      projectId: "sistema-rede",
+      storageBucket: "sistema-rede.firebasestorage.app",
+      messagingSenderId: "930399212687",
+      appId: "1:930399212687:web:a89c0d73be4b9fbd488cfa"
+    };
 
-<script>
-  // Sua configuração do Firebase
-const firebaseConfig = {
-  apiKey: "AIzaSyC3jisbwoN9p0GJzAzfld3Y2l25ZtqIrEg",
-  authDomain: "sistema-rede.firebaseapp.com",
-  projectId: "sistema-rede",
-  storageBucket: "sistema-rede.firebasestorage.app",
-  messagingSenderId: "930399212687",
-  appId: "1:930399212687:web:a89c0d73be4b9fbd488cfa",
-};
-  
-  // Inicializa o Firebase
-  firebase.initializeApp(firebaseConfig);
-</script>
+    // Inicializa o Firebase
+    firebase.initializeApp(firebaseConfig);
 
-<script>
-  const emailSpan = document.getElementById("userEmail");
+    const emailSpan = document.getElementById("userEmail");
+    const logoutBtn = document.getElementById("logoutBtn");
 
-  // Observa mudanças de autenticação
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      // Usuário logado
-      emailSpan.textContent = user.email;
-    } else {
-      // Nenhum usuário logado
-      emailSpan.textContent = "Usuário não logado";
-    }
-  });
-
-  // Botão "Sair" desloga do Firebase
-  const logoutBtn = document.getElementById("logoutBtn");
-  logoutBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    firebase.auth().signOut().then(() => {
-      window.location.href = "../index.html"; // volta para a página inicial
+    // Observa mudanças de autenticação
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        emailSpan.textContent = user.email;
+      } else {
+        emailSpan.textContent = "Usuário não logado";
+      }
     });
-  });
-</script>
-  
 
-  
+    // Logout
+    logoutBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      firebase.auth().signOut().then(() => {
+        window.location.href = "../index.html";
+      });
+    });
+  </script>
 </body>
 </html>
