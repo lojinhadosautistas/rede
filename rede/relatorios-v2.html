@@ -284,48 +284,48 @@
 
 
 
-  <script>
+<script>
   const filterButtons = document.querySelectorAll('.filter-btn');
-  const carousel = document.querySelector('#docsCarousel');
-  const carouselItems = document.querySelectorAll('#docsCarousel .carousel-item');
+  const carouselInner = document.querySelector('#docsCarousel .carousel-inner');
 
   filterButtons.forEach(btn => {
     btn.addEventListener('click', () => {
 
-      // Estado visual dos botões
+      // UI
       filterButtons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
       const filter = btn.dataset.filter;
-      let firstVisible = null;
+      const slides = carouselInner.querySelectorAll('.carousel-item');
 
-      carouselItems.forEach(item => {
-        const types = item.dataset.type.split(' '); // transforma em array
+      let firstVisibleSlide = null;
 
-        const shouldShow =
-          filter === 'all' ||
-          (filter === 'relatorios' && types.includes('relatorios')) ||
-          types.includes(filter);
+      slides.forEach(slide => {
+        const cards = slide.querySelectorAll('.module-card');
+        let hasVisible = false;
 
-        if (shouldShow) {
-          item.style.display = '';
-          if (!firstVisible) firstVisible = item;
+        cards.forEach(card => {
+          if (filter === 'all' || card.dataset.type.includes(filter)) {
+            card.style.display = '';
+            hasVisible = true;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        if (hasVisible) {
+          slide.style.display = '';
+          if (!firstVisibleSlide) firstVisibleSlide = slide;
         } else {
-          item.style.display = 'none';
+          slide.style.display = 'none';
         }
 
-        item.classList.remove('active');
+        slide.classList.remove('active');
       });
 
-      // Garante que o carrossel fique em um item visível válido
-      if (firstVisible) {
-        firstVisible.classList.add('active');
-      }
-
-      // Força o Bootstrap a "resetar" para o item ativo
-      const bsCarousel = bootstrap.Carousel.getInstance(carousel);
-      if (bsCarousel) {
-        bsCarousel.to([...carouselItems].indexOf(firstVisible));
+      // garante active correto
+      if (firstVisibleSlide) {
+        firstVisibleSlide.classList.add('active');
       }
     });
   });
