@@ -1816,3 +1816,63 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+
+
+/*--------------------------------------------------------------
+# Portfolio Section Section
+--------------------------------------------------------------*/
+.portfolio-thumb-wrapper {
+  position: relative;
+}
+
+.portfolio-thumb {
+  width: 100%;
+  height: 220px; /* altura uniforme */
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Botão de play pulsante */
+.pulsating-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  animation: pulse 1.5s infinite;
+  z-index: 2;
+}
+
+/* Ícone do play - exemplo Font Awesome */
+.pulsating-play-btn::before {
+  content: "\f04b"; /* ícone play */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 24px;
+  color: #ff0000;
+}
+
+/* Animação pulsante */
+@keyframes pulse {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+  50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .portfolio-thumb { height: 200px; }
+}
+
+@media (max-width: 768px) {
+  .portfolio-thumb { height: 180px; }
+}
