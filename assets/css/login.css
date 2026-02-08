@@ -18,3 +18,13 @@
 .card input::placeholder {
   color: #6c757d;
 }
+
+.login-link-muted {
+  color: #6c757d !important;
+  text-decoration: none;
+}
+
+.login-link-muted:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
