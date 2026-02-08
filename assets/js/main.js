@@ -130,7 +130,7 @@
   ========================== */
   if (typeof GLightbox !== "undefined") {
     GLightbox({
-      selector: ".glightbox"
+      selector: ".glightbox",
       autoplayVideos: true,
       touchNavigation: true
     });
