@@ -93,11 +93,10 @@
       </div>
     </div>
 
- <!-- ===============================
- ACERVO DE DOCUMENTOS
+<!-- ===============================
+ACERVO DE DOCUMENTOS - GRID
 ================================ -->
 <section class="mt-5">
-
   <h2 class="mb-3">Acervo de Documentos</h2>
   <p class="text-muted mb-4">
     Navegue pelos Relatórios, Dossiês e Planos Programáticos do Sistema REDE.
@@ -105,67 +104,103 @@
 
   <!-- Filtros -->
   <div class="btn-group mb-4" role="group">
-    <button class="btn btn-outline-primary filter-btn active" data-filter="relatorios">Relatórios (Todos)</button>
+    <button class="btn btn-outline-primary filter-btn active" data-filter="all">Todos</button>
     <button class="btn btn-outline-primary filter-btn" data-filter="relatorio-alerta">Relatórios de Alerta</button>
     <button class="btn btn-outline-primary filter-btn" data-filter="relatorio-trigger">Relatórios de Trigger</button>
     <button class="btn btn-outline-primary filter-btn" data-filter="dossie">Dossiês</button>
     <button class="btn btn-outline-primary filter-btn" data-filter="plano">Planos</button>
   </div>
 
-<!-- Carousel -->
-<div id="docsCarousel" class="carousel slide" data-bs-ride="false">
-  <div class="carousel-inner">
-    <!-- Todos os cards juntos -->
-    <div class="module-card" data-type="relatorios relatorio-alerta">
-      <i class="bi bi-exclamation-triangle"></i>
-      <h3>Relatório de Alerta 001</h3>
-      <p>Análise situacional e indicadores críticos.</p>
-      <a href="#">Abrir PDF →</a>
-    </div>
-
-    <div class="module-card" data-type="relatorios relatorio-alerta">
-      <i class="bi bi-exclamation-triangle"></i>
-      <h3>Relatório de Alerta 002</h3>
-      <p>Sinais emergentes.</p>
-      <a href="#">Abrir PDF →</a>
-    </div>
-
-    <div class="module-card" data-type="relatorios relatorio-trigger">
-      <i class="bi bi-lightning-charge"></i>
-      <h3>Trigger RZ-04</h3>
-      <p>Ativação de protocolo.</p>
-      <a href="#">Abrir PDF →</a>
-    </div>
-
-    <div class="module-card" data-type="dossie">
-      <i class="bi bi-folder2-open"></i>
-      <h3>Dossiê Territorial – Vila Mariana</h3>
-      <p>Leitura integrada do território e ativos.</p>
-      <a href="#">Consultar documento →</a>
-    </div>
-
-    <div class="module-card" data-type="plano">
-      <i class="bi bi-diagram-3"></i>
-      <h3>Plano Programático 2026</h3>
-      <p>Diretrizes, metas e cronograma estratégico.</p>
-      <a href="#">Ver plano →</a>
-    </div>
-
-    <!-- Adicione os demais cards aqui -->
-  </div>
-
-  <!-- Controles -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#docsCarousel" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </button>
-
-  <button class="carousel-control-next" type="button" data-bs-target="#docsCarousel" data-bs-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </button>
-</div>
-        </div>
+  <!-- Grid de Cards -->
+  <div class="row g-4" id="docsGrid">
+    <!-- Relatórios de Alerta -->
+    <div class="col-lg-4 col-md-6 portfolio-item filter-relatorio-alerta">
+      <div class="module-card">
+        <i class="bi bi-exclamation-triangle"></i>
+        <h3>Relatório de Alerta 001</h3>
+        <p>Análise situacional e indicadores críticos.</p>
+        <a href="#">Abrir PDF →</a>
       </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 portfolio-item filter-relatorio-alerta">
+      <div class="module-card">
+        <i class="bi bi-exclamation-triangle"></i>
+        <h3>Relatório de Alerta 002</h3>
+        <p>Sinais emergentes.</p>
+        <a href="#">Abrir PDF →</a>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 portfolio-item filter-relatorio-alerta">
+      <div class="module-card">
+        <i class="bi bi-exclamation-triangle"></i>
+        <h3>Relatório de Alerta 2025/01</h3>
+        <p>Monitoramento de aumento de peso.</p>
+        <a href="#">Visualizar relatório →</a>
+      </div>
+    </div>
+
+    <!-- Relatórios de Trigger -->
+    <div class="col-lg-4 col-md-6 portfolio-item filter-relatorio-trigger">
+      <div class="module-card">
+        <i class="bi bi-lightning-charge"></i>
+        <h3>Trigger RZ-01</h3>
+        <p>Apoio para consulta psiquiátrica.</p>
+        <a href="#">Abrir PDF →</a>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 portfolio-item filter-relatorio-trigger">
+      <div class="module-card">
+        <i class="bi bi-lightning-charge"></i>
+        <h3>Trigger RZ-02</h3>
+        <p>Agenda de atividades domésticas.</p>
+        <a href="#">Abrir PDF →</a>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 portfolio-item filter-relatorio-trigger">
+      <div class="module-card">
+        <i class="bi bi-lightning-charge"></i>
+        <h3>Trigger RZ-03</h3>
+        <p>Ativação de protocolo pedagógico-terapêutico.</p>
+        <a href="#">Abrir PDF →</a>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 portfolio-item filter-relatorio-trigger">
+      <div class="module-card">
+        <i class="bi bi-lightning-charge"></i>
+        <h3>Trigger RZ-04</h3>
+        <p>Ativação de protocolo.</p>
+        <a href="#">Abrir PDF →</a>
+      </div>
+    </div>
+
+    <!-- Dossiês -->
+    <div class="col-lg-4 col-md-6 portfolio-item filter-dossie">
+      <div class="module-card">
+        <i class="bi bi-folder2-open"></i>
+        <h3>Dossiê Territorial – Vila Mariana</h3>
+        <p>Leitura integrada do território e ativos.</p>
+        <a href="#">Consultar documento →</a>
+      </div>
+    </div>
+
+    <!-- Planos -->
+    <div class="col-lg-4 col-md-6 portfolio-item filter-plano">
+      <div class="module-card">
+        <i class="bi bi-diagram-3"></i>
+        <h3>Plano Programático 2026</h3>
+        <p>Diretrizes, metas e cronograma estratégico.</p>
+        <a href="#">Ver plano →</a>
+      </div>
+    </div>
+  </div>
 </section>
+
+
 
     
   </main>
@@ -213,8 +248,30 @@
     });
   </script>
 
+<!-- Script de Filtro -->
+<script>
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const items = document.querySelectorAll('#docsGrid .portfolio-item');
 
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // ativa botão
+      filterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
 
+      const filter = btn.dataset.filter;
+
+      items.forEach(item => {
+        if (filter === 'all' || item.classList.contains(`filter-${filter}`)) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+<!--
 <script>
   const filterButtons = document.querySelectorAll('.filter-btn');
 const carouselInner = document.querySelector('#docsCarousel .carousel-inner');
@@ -250,7 +307,7 @@ filterButtons.forEach(btn => {
     carousel.to(0);
   });
 });
-</script>
+</script>-->
 
   
 </body>
