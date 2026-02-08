@@ -28,3 +28,15 @@
   color: var(--accent-color);
   text-decoration: underline;
 }
+
+/* Links específicos da tela de login */
+.login-page a {
+  color: #6c757d;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.login-page a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
