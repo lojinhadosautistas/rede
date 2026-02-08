@@ -106,8 +106,8 @@
   <!-- Filtros -->
   <div class="btn-group mb-4" role="group">
     <button class="btn btn-outline-primary filter-btn active" data-filter="relatorios">Relatórios (Todos)</button>
-    <button class="btn btn-outline-primary filter-btn" data-filter="relatorio-alerta">Rel. de Alerta</button>
-    <button class="btn btn-outline-primary filter-btn" data-filter="relatorio-trigger">Rel. de Trigger</button>
+    <button class="btn btn-outline-primary filter-btn" data-filter="relatorio-alerta">Relatórios de Alerta</button>
+    <button class="btn btn-outline-primary filter-btn" data-filter="relatorio-trigger">Relatórios de Trigger</button>
     <button class="btn btn-outline-primary filter-btn" data-filter="dossie">Dossiês</button>
     <button class="btn btn-outline-primary filter-btn" data-filter="plano">Planos</button>
   </div>
@@ -225,11 +225,13 @@
 
   <script>
   const filterButtons = document.querySelectorAll('.filter-btn');
+  const carousel = document.querySelector('#docsCarousel');
   const carouselItems = document.querySelectorAll('#docsCarousel .carousel-item');
 
   filterButtons.forEach(btn => {
     btn.addEventListener('click', () => {
 
+      // Estado visual dos botões
       filterButtons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
@@ -237,9 +239,14 @@
       let firstVisible = null;
 
       carouselItems.forEach(item => {
-        const type = item.dataset.type;
+        const types = item.dataset.type.split(' '); // transforma em array
 
-        if (filter === 'all' || type === filter) {
+        const shouldShow =
+          filter === 'all' ||
+          (filter === 'relatorios' && types.includes('relatorios')) ||
+          types.includes(filter);
+
+        if (shouldShow) {
           item.style.display = '';
           if (!firstVisible) firstVisible = item;
         } else {
@@ -249,13 +256,19 @@
         item.classList.remove('active');
       });
 
+      // Garante que o carrossel fique em um item visível válido
       if (firstVisible) {
         firstVisible.classList.add('active');
+      }
+
+      // Força o Bootstrap a "resetar" para o item ativo
+      const bsCarousel = bootstrap.Carousel.getInstance(carousel);
+      if (bsCarousel) {
+        bsCarousel.to([...carouselItems].indexOf(firstVisible));
       }
     });
   });
 </script>
-
 
   
 </body>
