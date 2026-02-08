@@ -40,3 +40,27 @@
   color: var(--accent-color);
   text-decoration: underline;
 }
+
+/* Reveal password */
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+
+  background: transparent;
+  border: none;
+  padding: 0;
+
+  color: #6c757d;
+  cursor: pointer;
+}
+
+.password-toggle:hover {
+  color: var(--accent-color);
+}
