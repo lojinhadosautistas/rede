@@ -21,6 +21,9 @@
     rel="stylesheet"
   />
 
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/hub.css">
+  
 </head>
 
 <body>
@@ -102,8 +105,10 @@
 
   <!-- Filtros -->
   <div class="btn-group mb-4" role="group">
-    <button class="btn btn-outline-primary filter-btn active" data-filter="all">Todos</button>
-    <button class="btn btn-outline-primary filter-btn" data-filter="relatorio">Relatórios</button>
+    <button class="btn btn-outline-primary filter-btn active" data-filter="all">Todos os documentos</button>
+    <button class="btn btn-outline-primary filter-btn" data-filter="relatorios">Todos os Relatórios</button>
+    <button class="btn btn-outline-primary filter-btn" data-filter="relatorio-alerta">Relatórios de Alerta</button>
+    <button class="btn btn-outline-primary filter-btn" data-filter="relatorio-trigger">Relatórios de Trigger</button>
     <button class="btn btn-outline-primary filter-btn" data-filter="dossie">Dossiês</button>
     <button class="btn btn-outline-primary filter-btn" data-filter="plano">Planos</button>
   </div>
@@ -113,7 +118,7 @@
     <div class="carousel-inner">
 
       <!-- ITEM -->
-      <div class="carousel-item active" data-type="relatorio">
+      <div class="carousel-item active" data-type="relatorios relatorio-alerta">
         <div class="module-card">
           <i class="bi bi-journal-text"></i>
           <h3>Relatório de Alerta 001</h3>
@@ -122,7 +127,7 @@
         </div>
       </div>
       
-      <div class="carousel-item active" data-type="alerta">
+      <div class="carousel-item" data-type="relatorios relatorio-alerta">
         <div class="module-card">
           <i class="bi bi-exclamation-triangle"></i>
           <h3>Relatório de Alerta · 2026/01</h3>
@@ -131,7 +136,7 @@
         </div>
       </div>
 
-      <div class="carousel-item" data-type="trigger">
+      <div class="carousel-item" data-type="relatorios relatorio-trigger">
         <div class="module-card">
          <i class="bi bi-lightning-charge"></i>
          <h3>Relatório de Trigger · RZ-04</h3>
