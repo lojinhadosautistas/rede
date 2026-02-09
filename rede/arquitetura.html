@@ -1,0 +1,355 @@
+
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema REDE | Artefatos do Sistema</title>
+  
+  <!-- Favicons -->
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  
+  <!-- Bootstrap + Icons -->
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../assets/css/hub.css">
+  
+</head>
+
+<body>
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="brand">Sistema REDE</div>
+    <div class="actions">
+      <span id="userEmail" style="margin-left: 15px; color: var(--primary); font-weight: 500; font-style: italic; font-size: 0.9rem;">Carregando...</span>
+      <a href="#" id="logoutBtn">Sair</a>
+    </div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h6>Dashboard</h6>
+    <a href="hub.html"><i class="bi bi-grid"></i> Visão Geral</a>
+
+    <h6>Conteúdo</h6>
+    <a href="documentos.html"><i class="bi bi-journal-text"></i> Documentos Técnicos</a>
+    <a href="#"><i class="bi bi-calendar4-week"></i> Calendário 2026</a>
+    <a href="#"><i class="bi bi-film"></i> Rota Azul</a>
+
+    <h6>Artefatos do Sistema</h6>
+    <a href="#"><i class="bi bi-journal-text"></i> Arquitetura e Modelagem</a>
+    <a href="#"><i class="bi bi-calendar4-week"></i> Estrutura conceitual</a>
+    <a href="#"><i class="bi bi-journal-text"></i> Módulos e Agentes</a>
+
+    <h6>Ferramentas</h6>
+    <a href="lucas.html"><i class="bi bi-shield-lock"></i> LUCAS - Agente de IA</a>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <div class="page-title mb-4">
+      <h1>Arquitetura e Modelagem do Sistema REDE</h1>
+      <p>A arquitetura do <b>Sistema REDE</b> se materializa por meio de três tipos de produtos institucionais: </p>
+    </div>
+
+    <!-- MODULES -->
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <div class="module-card">
+          <i class="bi bi-journal-text"></i>
+          <h3>Arquitetura</h3>
+          <p>O Sistema REDE foi concebido para integrar informação, processos e instrumentos pedagógico-terapêuticos em um ambiente digital seguro, flexível e escalável. Sua arquitetura tecnológica e modelagem de dados garantem eficiência operacional, rastreabilidade das ações e suporte à tomada de decisão baseada em evidências.<br><br>
+            O banco de dados que alimenta o Sistema é composto por 3 módulos independentes e integráveis, que juntos oferecem uma visão completa com foco em comportamento, rotina e bem-estar: 
+            <b>🏠 Módulo MAD - Monitoramento de Atividades Domésticas</b> <br>
+            <ul class="card-text mb-3">
+              <li>Registro e análise das rotinas diárias em ambiente familiar.</li>
+              <li>Identifica padrões de comportamento, hábitos e momentos de sobrecarga sensorial.</li>
+              <li>Apoia familiares e terapeutas no acompanhamento do progresso individual e na adaptação de rotinas.</li>
+            </ul>
+          </p>
+         <!-- <a href="#">Mais sobre Estrutura Conceitual →</a> -->
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="module-card">
+          <i class="bi bi-newspaper"></i>
+          <h3>Visão Geral</h3>
+          <p>O Sistema REDE combina camadas estruturadas de informação com módulos funcionais especializados, permitindo a organização de Relatórios, Dossiês e Planos Programáticos de forma integrada. <br><br>
+            Cada módulo é independente, mas interconectado, possibilitando acesso rápido a dados relevantes e promovendo a colaboração entre diferentes áreas.</p>
+         <!-- <a href="#">Acessar nossa Wiki →</a> -->
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="module-card">
+          <i class="bi bi-calendar4-week"></i>
+          <h3>Modelagem de Dados</h3>
+          <p><b>A modelagem do Sistema REDE segue princípios de <b>normalização, hierarquia e categorização de documentos</b>:<br>
+            <b>Relatórios</b>: registros analíticos e situacionais.<br>
+            <b>Dossiês</b>: coleções temáticas que agregam informações de múltiplas fontes.<br>
+            <b>Planos Programáticos</b>: documentos estratégicos com diretrizes, metas e cronogramas.<br>
+          Cada registro possui metadados detalhados, facilitando filtragem, classificação e visualização contextualizada.</p>
+         <!-- <a href="#">Consultar referencial bibliográfico →</a> -->
+        </div>
+      </div>
+
+
+            <div class="col-lg-4 col-md-6">
+        <div class="module-card">
+          <i class="bi bi-calendar4-week"></i>
+          <h3>Camadas do Sistema</h3>
+          <p><b>Camada de Apresentação (Front-End)</b>: Interfaces intuitivas e responsivas, desenvolvidas para web, que facilitam a navegação, consulta e análise de informações, garantindo experiência de usuário consistente em diversos dispositivos.<br>
+            <b>Camada de Aplicação (Back-End)</b>: Núcleo lógico do sistema, responsável pelo processamento de dados, execução de regras de negócio e integração entre módulos, mantendo segurança e desempenho.<br>
+            <b>Camada de Dados (Database/Storage)</b>: Armazenamento estruturado de informações e documentos, permitindo consultas rápidas, histórico de ações e rastreabilidade completa de cada registro.
+            <b>Camada de Integração e APIs</b>: Possibilita a comunicação com serviços externos, como Google Drive, Firebase e outras ferramentas, ampliando a flexibilidade e interoperabilidade do sistema.</p>
+         <!-- <a href="#">Consultar referencial bibliográfico →</a> -->
+        </div>
+      </div>
+
+      
+          <div class="page-title mb-4">
+      <p>Esses produtos não representam etapas rígidas e/ou hierárquicas, mas camadas complementares de leitura, organização e ação pedagógico-terapêutica.
+</p>
+    </div>
+    </div>
+<hr>
+<!-- ===============================
+ACERVO DE DOCUMENTOS - GRID
+================================ -->
+<section class="mt-5">
+  <h3 class="mb-3">Utilize os botões abaixo para filtrar os documentos por TIPO:</h3>
+  <p class="text-muted mb-4">  </p>
+
+  <!-- Filtros -->
+  <div class="btn-group mb-4" role="group">
+    <button class="btn btn-outline-primary filter-btn active" data-filter="all">Todos</button>
+    <button class="btn btn-outline-primary filter-btn" data-filter="relatorio-alerta">Relatórios de Alerta</button>
+    <button class="btn btn-outline-primary filter-btn" data-filter="relatorio-trigger">Relatórios de Trigger</button>
+    <button class="btn btn-outline-primary filter-btn" data-filter="dossie">Dossiês</button>
+    <button class="btn btn-outline-primary filter-btn" data-filter="plano">Planos</button>
+    <button class="btn btn-outline-primary filter-btn" data-filter="2025">2025</button>
+    <button class="btn btn-outline-primary filter-btn" data-filter="2026">2026</button>
+  </div>
+
+  <!-- Grid de Cards -->
+  <div class="row g-4" id="docsGrid">
+    <!-- Relatórios de Alerta -->
+    <div class="col-lg-4 col-md-6 portfolio-item filter-relatorio-alerta filter-2025">
+      <div class="module-card">
+        <i class="bi bi-exclamation-triangle"></i>
+        <h3>Relatório de Alerta 01.2025</h3>
+        <p><b>Síntese:</b> Análise situacional e indicadores críticos relacionados ao aniversário do primo Rafael (comemoração de 2 anos).<br>
+        <b>Data:</b> 14/11/2025</p>
+        <a href="https://drive.google.com/file/d/1FQPffAofqiAiHTaKIv49Y1P-E9ZQd6PW/preview" target="_blank">Abrir PDF →</a>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 portfolio-item filter-relatorio-alerta filter-2025">
+      <div class="module-card">
+        <i class="bi bi-exclamation-triangle"></i>
+        <h3>Relatório de Alerta 02.2025</h3>
+        <p><b>Síntese:</b> Monitoramento de aumento de peso.<br>
+        <b>Data:</b> 14/11/2025</p>
+        <a href="https://drive.google.com/file/d/1NnzOiebEzgfE4jp3y5gnLI6QTsyZU2G6/preview" target="_blank">Visualizar relatório →</a>
+      </div>
+    </div>
+
+    <!-- Relatórios de Trigger -->
+    <div class="col-lg-4 col-md-6 portfolio-item filter-relatorio-trigger filter-2025">
+      <div class="module-card">
+        <i class="bi bi-lightning-charge"></i>
+        <h3>Trigger 01.2025</h3>
+        <p><b>Síntese:</b> Apoio para consulta psiquiátrica.<br>
+        <b>Data:</b> 19/11/2025</p>
+        <a href="https://drive.google.com/file/d/1mHX1e9Pfz-NsawSOboSeeTA40jK46GlN/preview" target="_blank">Abrir PDF →</a>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 portfolio-item filter-relatorio-trigger filter-2025">
+      <div class="module-card">
+        <i class="bi bi-lightning-charge"></i>
+        <h3>Trigger 02.2025</h3>
+        <p><b>Síntese:</b>Agenda de atividades programáticas e domésticas.<br>
+        <b>Data:</b> 24/11/2025</p>
+        <a href="https://drive.google.com/file/d/1lKM9hJE1rfadxwCPMprah9dRG34ciepi/preview" target="_blank">Abrir PDF →</a>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 portfolio-item filter-relatorio-trigger filter-2025">
+      <div class="module-card">
+        <i class="bi bi-lightning-charge"></i>
+        <h3>Trigger 03.2025</h3>
+        <p><b>Síntese:</b>Ativação de protocolo "Natal no Quintal" (Evento Natalino).<br>
+        <b>Data:</b> 14/12/2025</p>
+        <a href="https://drive.google.com/file/d/12oPYfggle5VhPPRW_HUU2aBV0QAVM9l7/preview" target="_blank">Abrir PDF →</a>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 portfolio-item filter-relatorio-trigger filter-2025">
+      <div class="module-card">
+        <i class="bi bi-lightning-charge"></i>
+        <h3>Trigger 01.2026</h3>
+        <p><b>Síntese:</b>Ativação de protocolo "Bloco da Gia" (Carnaval 2026).<br>
+        <b>Data:</b> 06/01/2026</p>
+        <a href="https://drive.google.com/file/d/1hEP0wleJPaWEknGmM7bN21gpsBJfNBNa/preview" target="_blank">Abrir PDF →</a>
+      </div>
+    </div>
+
+    <!-- Dossiês -->
+    <div class="col-lg-4 col-md-6 portfolio-item filter-dossie filter-2025">
+      <div class="module-card">
+        <i class="bi bi-folder2-open"></i>
+        <h3>Dossiê Férias 2025-2026</h3>
+        <p><b>Síntese:</b>Leitura integrada do período das férias de fim de ano (2025/2026).<br>
+        <b>Data:</b> 17/01/2026</p>
+        <a href="https://drive.google.com/file/d/1oWfLQspDjsb93KM1J5AabB7uHGVMkCDC/preview" target="_blank">Consultar documento →</a>
+      </div>
+    </div>
+    
+    <div class="col-lg-4 col-md-6 portfolio-item filter-dossie filter-2026">
+      <div class="module-card">
+        <i class="bi bi-folder2-open"></i>
+        <h3>Dossiê Calendário 2026</h3>
+        <p><b>Síntese:</b>Leitura integrada da estratégia de intervenção Calendário 2026.<br>
+        <b>Data:</b> 25/01/2026</p>
+        <a href="https://drive.google.com/file/d/1Ccxq-kaZV3Oz7T1GP9obDtAp1ULbSZYN/preview" target="_blank">Consultar documento →</a>
+      </div>
+    </div>
+
+    <!-- Planos -->
+    <div class="col-lg-4 col-md-6 portfolio-item filter-plano filter-2026">
+      <div class="module-card">
+        <i class="bi bi-diagram-3"></i>
+        <h3>Plano Programático 2026</h3>
+        <p><b>Síntese:</b>Diretrizes, metas e cronograma estratégico para as atividades semestrais 2026.1.<br>
+        <b>Data:</b> 03/02/2026</p>
+        <a href="https://drive.google.com/file/d/10CzxjZGTQrqPraSsF6wRsXg4JytSggJv/preview" target="_blank">Ver plano →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+    
+  </main>
+
+  <!-- JS -->
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="js/hub.js"></script>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
+  <script>
+    // Configuração do Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyC3jisbwoN9p0GJzAzfld3Y2l25ZtqIrEg",
+      authDomain: "sistema-rede.firebaseapp.com",
+      projectId: "sistema-rede",
+      storageBucket: "sistema-rede.firebasestorage.app",
+      messagingSenderId: "930399212687",
+      appId: "1:930399212687:web:a89c0d73be4b9fbd488cfa"
+    };
+
+    // Inicializa o Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    const emailSpan = document.getElementById("userEmail");
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    // Observa mudanças de autenticação
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        emailSpan.textContent = user.email;
+      } else {
+        emailSpan.textContent = "Usuário não logado";
+      }
+    });
+
+    // Logout
+    logoutBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      firebase.auth().signOut().then(() => {
+        window.location.href = "../index.html";
+      });
+    });
+  </script>
+
+<!-- Script de Filtro -->
+<script>
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const items = document.querySelectorAll('#docsGrid .portfolio-item');
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // ativa botão
+      filterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.dataset.filter;
+
+      items.forEach(item => {
+        if (filter === 'all' || item.classList.contains(`filter-${filter}`)) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+<!--
+<script>
+  const filterButtons = document.querySelectorAll('.filter-btn');
+const carouselInner = document.querySelector('#docsCarousel .carousel-inner');
+const carousel = bootstrap.Carousel.getOrCreateInstance(document.getElementById('docsCarousel'));
+
+filterButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    // Atualiza UI do botão
+    filterButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const filter = btn.dataset.filter;
+    const cards = carouselInner.querySelectorAll('.module-card');
+
+    let firstVisible = null;
+
+    cards.forEach(card => {
+      if (filter === 'all' || card.dataset.type.includes(filter)) {
+        card.style.display = 'block';
+        if (!firstVisible) firstVisible = card;
+      } else {
+        card.style.display = 'none';
+      }
+      card.classList.remove('active'); // remove active do card
+    });
+
+    // Garante que o primeiro card visível seja "ativo"
+    if (firstVisible) {
+      firstVisible.classList.add('active');
+    }
+
+    // Reinicia o carousel no primeiro card visível
+    carousel.to(0);
+  });
+});
+</script>-->
+
+  
+</body>
+</html>
