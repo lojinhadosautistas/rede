@@ -373,7 +373,7 @@ body.index-page {
   justify-content: center;
   gap: 10px;
 
-  background: #ffffff;
+  background: rgba(255,255,255,0.92);
   border: 1px solid #e5e7eb;
   border-radius: 16px;
 
