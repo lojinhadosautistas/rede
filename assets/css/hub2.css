@@ -27,10 +27,6 @@ body.index-page {
   background: #f5f7fa;
 }
 
-.main {
-  min-height: auto !important;
-  padding-bottom: 60px;
-}
 
 /* Remove efeitos herdados de hero */
 .hero,
@@ -132,7 +128,8 @@ body.index-page {
 .main {
   margin-left: 240px;
   padding: 90px 30px 30px;
-   
+  padding-bottom: 60px;
+  min-height: auto;
 }
 
 .page-title h1 {
@@ -388,6 +385,7 @@ body.index-page {
   border: 1px solid #e5e7eb;
   border-radius: 24px;
   padding: 16px;
+  margin-top: 16px;
   margin-bottom: 24px;
 
   box-shadow: 
