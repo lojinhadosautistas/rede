@@ -382,12 +382,11 @@ body.index-page {
   color: #b91c1c;
 }
 
-
 /* container do launcher com aparência de app */
 .launcher-app {
   background: linear-gradient(180deg, #ffffff, #f9fafb);
   border: 1px solid #e5e7eb;
-  border-radius: 20px;
+  border-radius: 24px;
   padding: 16px;
   margin-bottom: 24px;
 
