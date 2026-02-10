@@ -1,0 +1,122 @@
+/* =========================
+   RESET BÁSICO
+========================= */
+* {
+  box-sizing: border-box;
+}
+
+/* =========================
+   TOPBAR
+========================= */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  z-index: 1000;
+
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* =========================
+   SIDEBAR (DESKTOP)
+========================= */
+.sidebar {
+  width: 240px;
+  position: fixed;
+  top: 60px;
+  bottom: 0;
+  left: 0;
+  background: #f8fafc;
+}
+
+/* =========================
+   ÁREA PRINCIPAL
+========================= */
+.main {
+  margin-left: 240px;
+  padding: 24px;
+  padding-top: 84px;
+}
+
+/* =========================
+   LAUNCHER (BASE)
+========================= */
+.launcher-app {
+  display: none;
+}
+
+/* =========================
+   ITENS DO LAUNCHER
+========================= */
+.system-launcher {
+  display: grid;
+  gap: 12px;
+}
+
+.launcher-item {
+  background: #ffffff;
+  border-radius: 16px;
+  height: 80px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  color: #111827;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.launcher-item i {
+  font-size: 1.7rem;
+  margin-bottom: 4px;
+}
+
+.launcher-item span {
+  font-size: 0.72rem;
+  text-align: center;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 992px) {
+
+  /* sidebar some */
+  .sidebar {
+    display: none;
+  }
+
+  /* launcher aparece */
+  .launcher-app {
+    display: block;
+
+    position: fixed;
+    top: 60px; /* fora da topbar */
+    left: 0;
+    right: 0;
+    z-index: 950;
+
+    padding: 14px 16px;
+
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  /* grid fluido e real */
+  .system-launcher {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  /* conteúdo empurrado corretamente */
+  .main {
+    margin-left: 0;
+    padding-top: 260px;
+  }
+}
