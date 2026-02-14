@@ -304,3 +304,27 @@ body {
     padding: 10px;
   }
 }
+
+
+
+
+/* SUBMENU VISUAL */
+.sidebar a.submenu {
+  padding-left: 35px;
+  font-size: 0.92rem;
+  opacity: 0.85;
+}
+
+.sidebar a.submenu::before {
+  content: "↳";
+  position: absolute;
+  margin-left: -18px;
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+/* Quando ativo */
+.sidebar a.submenu.active {
+  opacity: 1;
+  font-weight: 500;
+}
