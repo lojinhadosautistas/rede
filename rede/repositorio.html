@@ -21,15 +21,20 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="../assets/css/repositorio.css">
-  
 </head>
 
 <body>
+
   <!-- TOPBAR -->
   <div class="topbar">
-    <div class="brand">Sistema REDE <a href="hub.html" class="active"><i class="bi bi-forward-fill"></i> Visão Geral</a></div>
+    <div class="brand">
+      Sistema REDE 
+      <a href="hub.html" class="active">
+        <i class="bi bi-forward-fill"></i> Visão Geral
+      </a>
+    </div>
     <div class="actions">
-      <span id="userEmail" style="margin-left: 15px; color: var(--primary); font-weight: 500; font-style: italic; font-size: 0.9rem;">Carregando...</span>
+      <span id="userEmail">Carregando...</span>
       <a href="#" id="logoutBtn">Sair</a>
     </div>
   </div>
@@ -41,11 +46,12 @@
 
     <h6>Conteúdo</h6>
     <a href="documentos.html"><i class="bi bi-journal-text"></i> Documentos Técnicos</a>
-    <a href="calendario-2026.html" class="active"><i class="bi bi-calendar4-week"></i> Calendário 2026</a>
+    <a href="calendario-2026.html"><i class="bi bi-calendar4-week"></i> Calendário 2026</a>
+    <a href="repositorio.html" class="active"><i class="bi bi-folder2-open"></i> Repositório</a>
 
     <h6>Artefatos do Sistema</h6>
     <a href="arquitetura.html"><i class="bi bi-journal-text"></i> Arquitetura e Modelagem</a>
-    <a href="#"><i class="bi bi-calendar4-week"></i> Estrutura conceitual</a>
+    <a href="#"><i class="bi bi-diagram-3"></i> Estrutura conceitual</a>
 
     <h6>Ferramentas</h6>
     <a href="lucas.html"><i class="bi bi-shield-lock"></i> LUCAS - Agente de IA</a>
@@ -53,82 +59,88 @@
 
   <!-- MAIN -->
   <main class="main">
-  <div class="page-title mb-4">
-    <h1>Repositório de Arquivos</h1>
-    <p>Ambiente estruturado de acesso aos documentos técnicos e institucionais do Sistema REDE - bem como arquivos derivados dos referentes documentos.</p>
-  </div>
 
-  <div class="card shadow-sm border-0">
-    <div class="card-body p-0">
+    <div class="page-title mb-4">
+      <h1>Repositório de Arquivos</h1>
+      <p>
+        Ambiente estruturado de acesso aos documentos técnicos e institucionais 
+        do Sistema REDE, bem como arquivos derivados dos respectivos documentos.
+      </p>
+    </div>
 
-      <thead class="table-light">
-  <tr>
-    <th class="sortable">
-      Nome 
-      <i class="bi bi-arrow-down-up sort-icon"></i>
-    </th>
-    <th class="sortable">
-      Tipo 
-      <i class="bi bi-arrow-down-up sort-icon"></i>
-    </th>
-    <th class="sortable">
-      Data 
-      <i class="bi bi-arrow-down-up sort-icon"></i>
-    </th>
-    <th>Status</th>
-  </tr>
-</thead>
+    <div class="explorer-card">
+
+      <table class="table align-middle mb-0" id="repoTable">
+
+        <thead>
+          <tr>
+            <th class="sortable">
+              Nome 
+              <i class="bi bi-arrow-down-up sort-icon"></i>
+            </th>
+            <th class="sortable">
+              Tipo 
+              <i class="bi bi-arrow-down-up sort-icon"></i>
+            </th>
+            <th class="sortable">
+              Data 
+              <i class="bi bi-arrow-down-up sort-icon"></i>
+            </th>
+            <th>Status</th>
+          </tr>
+        </thead>
+
+        <tbody>
 
           <!-- PASTA -->
           <tr class="folder-row">
             <td>
-              <i class="bi bi-folder-fill text-warning me-2"></i>
+              <i class="bi bi-folder-fill me-2"></i>
               <a href="calendario-2026.html">Calendário 2026</a>
             </td>
             <td>Pasta</td>
             <td>-</td>
-            <td><span class="badge bg-secondary">Interno</span></td>
+            <td><span class="badge-interno">Interno</span></td>
           </tr>
 
-          <!-- ARQUIVO -->
-          <tr>
+          <!-- ARQUIVO HTML -->
+          <tr class="file-doc">
             <td>
-              <i class="bi bi-file-earmark-text me-2 text-primary"></i>
+              <i class="bi bi-file-earmark-text me-2"></i>
               <a href="arquitetura.html">Arquitetura e Modelagem</a>
             </td>
             <td>Documento HTML</td>
             <td>02/02/2026</td>
-            <td><span class="badge bg-success">Ativo</span></td>
+            <td><span class="badge-ativo">Ativo</span></td>
           </tr>
 
           <!-- ARQUIVO PDF -->
-          <tr>
+          <tr class="file-pdf">
             <td>
-              <i class="bi bi-file-earmark-pdf me-2 text-danger"></i>
+              <i class="bi bi-file-earmark-pdf me-2"></i>
               <a href="#">Relatório Técnico v1.0.pdf</a>
             </td>
             <td>PDF</td>
             <td>15/01/2026</td>
-            <td><span class="badge bg-warning text-dark">Restrito</span></td>
+            <td><span class="badge-restrito">Restrito</span></td>
           </tr>
 
         </tbody>
+
       </table>
 
     </div>
-  </div>
-</main>
+
+  </main>
 
   <!-- JS -->
   <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script type="module" src="js/hub.js"></script>
 
   <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
 
   <script>
-    // Configuração do Firebase
     const firebaseConfig = {
       apiKey: "AIzaSyC3jisbwoN9p0GJzAzfld3Y2l25ZtqIrEg",
       authDomain: "sistema-rede.firebaseapp.com",
@@ -138,13 +150,11 @@
       appId: "1:930399212687:web:a89c0d73be4b9fbd488cfa"
     };
 
-    // Inicializa o Firebase
     firebase.initializeApp(firebaseConfig);
 
     const emailSpan = document.getElementById("userEmail");
     const logoutBtn = document.getElementById("logoutBtn");
 
-    // Observa mudanças de autenticação
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         emailSpan.textContent = user.email;
@@ -153,7 +163,6 @@
       }
     });
 
-    // Logout
     logoutBtn.addEventListener("click", (e) => {
       e.preventDefault();
       firebase.auth().signOut().then(() => {
@@ -162,7 +171,5 @@
     });
   </script>
 
-
-  
 </body>
 </html>
