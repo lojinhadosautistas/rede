@@ -1,0 +1,41 @@
+/* ============================= */
+/* REPOSITÓRIO - ESTILO EXPLORER */
+/* ============================= */
+
+#repoTable th {
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+#repoTable th.sortable {
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#repoTable th.sortable:hover {
+  background-color: #f1f3f5;
+}
+
+#repoTable .sort-icon {
+  font-size: 0.8rem;
+  margin-left: 6px;
+  opacity: 0.4;
+  transition: 0.2s ease;
+}
+
+#repoTable th.sortable:hover .sort-icon {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Estado visual ativo (para uso futuro com JS) */
+#repoTable th.active {
+  background-color: #e9ecef;
+}
+
+#repoTable th.active .sort-icon {
+  opacity: 1;
+}
